@@ -5,7 +5,7 @@
             {{-- logo --}}
             <div class="flex items-center space-x-4">
                 <img src="/img/logo.png" alt="Logo" class="h-12 w-12 rounded">
-                <h1 id="product-name" class="text-2xl sm:text-3xl font-bold text-yellow-300">Pandoras</h1>
+                <h1 id="product-name" class="text-2xl sm:text-3xl font-bold text-yellow-300">SyncCard</h1>
             </div>
 
             {{-- Mobile menu button --}}

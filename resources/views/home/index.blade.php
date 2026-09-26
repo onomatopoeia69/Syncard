@@ -330,7 +330,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6">
-                    <div class="footer-brand">PANDORAS<span>™</span></div>
+                    <div class="footer-brand">SyncCard<span>™</span></div>
                     <p class="footer-text">
                         Smart NFC solutions for digital identity, contactless information,
                         and safer connections.
@@ -360,7 +360,7 @@
             </div>
 
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
-                <span>© {{ date('Y') }} PANDORAS™. All rights reserved.</span>
+                <span>© {{ date('Y') }} SyncCard™. All rights reserved.</span>
                 <span>SMART TECHNOLOGY FOR A SAFER TOMORROW.</span>
             </div>
         </div>
