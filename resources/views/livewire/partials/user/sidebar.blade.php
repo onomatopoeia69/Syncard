@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+</head>
+<body>
+    
+</body>
+</html>
 <aside id="sidebar"
     class="fixed top-0 left-0 z-60 w-64 h-screen bg-white border-r border-gray-200 transition-transform">
 
@@ -61,7 +73,7 @@
 
              <a href="{{ route('users.children') }}" wire:current="font-bold text-yellow-500"  class="w-full flex items-center gap-3 px-4 py-3
                                    rounded-lg text-gray-600 hover:bg-gray-100 text-sm">
-             <i class="bi bi-person-arms-up""></i>
+             <i class="bi bi-person-arms-up"></i>
                 <span>Child Lost</span>
             </a>
  

@@ -1,0 +1,264 @@
+#sidebar {
+    background:
+        radial-gradient(circle at 100% 0%,
+            rgba(253, 224, 71, 0.08),
+            transparent 28%),
+        linear-gradient(145deg,
+            #172033 0%,
+            #111827 50%,
+            #0b1220 100%) !important;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+
+    box-shadow:
+        8px 0 35px rgba(0, 0, 0, 0.25);
+
+    color: #fff;
+}
+
+/* Yellow top line */
+#sidebar::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #fde047;
+
+    box-shadow:
+        0 0 18px rgba(253, 224, 71, 0.35);
+}
+
+/* icon */
+#sidebar .bg-yellow-500 {
+    background: rgba(253, 224, 71, 0.10) !important;
+
+    color: #fde047 !important;
+
+    border: 1px solid rgba(253, 224, 71, 0.30);
+
+    box-shadow:
+        0 0 25px rgba(253, 224, 71, 0.08);
+}
+
+/* Brand title */
+#sidebar h1 {
+    color: #ffffff !important;
+    letter-spacing: 0.3px;
+}
+
+/* Admin text */
+#sidebar p {
+    color: #64748b !important;
+}
+
+/* Nav link */
+#sidebar nav a {
+    color: #94a3b8 !important;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Hover */
+#sidebar nav a:hover {
+    color: #e2e8f0 !important;
+
+    background: rgba(255, 255, 255, 0.045) !important;
+
+    border-color: rgba(255, 255, 255, 0.07);
+
+    transform: translateX(3px);
+}
+
+
+
+/* icons */
+#sidebar nav a i {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #64748b;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition: all 0.25s ease;
+}
+
+
+/* Hover icon */
+#sidebar nav a:hover i {
+    color: #fde047;
+
+    background: rgba(253, 224, 71, 0.07);
+
+    border-color: rgba(253, 224, 71, 0.18);
+}
+
+
+/* action link */
+#sidebar nav a.font-bold {
+    color: #fde047 !important;
+
+    background:
+        linear-gradient(90deg,
+            rgba(253, 224, 71, 0.12),
+            rgba(253, 224, 71, 0.035)) !important;
+
+    border-color:
+        rgba(253, 224, 71, 0.18) !important;
+
+    box-shadow:
+        inset 3px 0 0 #fde047;
+}
+
+
+/* Active icon */
+
+#sidebar nav a.font-bold i {
+    color: #111827 !important;
+
+    background: #fde047 !important;
+
+    border-color: #fde047 !important;
+
+    box-shadow:
+        0 0 16px rgba(253, 224, 71, 0.15);
+}
+
+
+/* bottom link */
+#sidebar>div>div.absolute a {
+    color: #94a3b8 !important;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#sidebar>div>div.absolute a:hover {
+    color: #e2e8f0 !important;
+
+    background: rgba(255, 255, 255, 0.045) !important;
+
+    border-color: rgba(255, 255, 255, 0.07);
+
+    transform: translateX(3px);
+}
+
+
+/* Bottom icons */
+#sidebar>div>div.absolute a i {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #64748b;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* childlost */
+#sidebar>div>div.absolute a[href*="children"] {
+    color: #fde047 !important;
+
+    background: rgba(253, 224, 71, 0.035) !important;
+
+    border-color: rgba(253, 224, 71, 0.10);
+}
+
+
+#sidebar>div>div.absolute a[href*="children"] i {
+    color: #fde047;
+
+    background: rgba(253, 224, 71, 0.08);
+
+    border-color: rgba(253, 224, 71, 0.15);
+}
+
+/* logout */
+#sidebar form button {
+    color: #f87171 !important;
+
+    border-radius: 11px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+#sidebar form button:hover {
+    color: #fca5a5 !important;
+
+    background: rgba(239, 68, 68, 0.07) !important;
+
+    transform: translateX(3px);
+}
+
+
+#sidebar form button i {
+    color: #f87171;
+
+    transition: all 0.25s ease;
+}
+
+
+#sidebar form button:hover i {
+    color: #fca5a5;
+}
+
+/* scrollbar */
+#sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(253, 224, 71, 0.25);
+}
