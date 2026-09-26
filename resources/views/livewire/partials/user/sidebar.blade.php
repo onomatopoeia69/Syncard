@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
 </head>
-<body>
-    
-</body>
-</html>
+
 <aside id="sidebar"
     class="fixed top-0 left-0 z-60 w-64 h-screen bg-white border-r border-gray-200 transition-transform">
 
