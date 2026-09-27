@@ -15,12 +15,12 @@
         <div class="flex items-center gap-3 px-3 mb-8">
             <div class="w-10 h-10 rounded-lg bg-yellow-500 text-white
                             flex items-center justify-center">
-                <i class="bi bi-shop text-xl"></i>
+               <i class="bi bi-credit-card-2-front"></i>
             </div>
 
             <div>
                 <h1 class="font-bold text-sm">
-                    Pandora
+                    SyncCard
                 </h1>
                 <p class="text-xs text-gray-500">
                     Admin
