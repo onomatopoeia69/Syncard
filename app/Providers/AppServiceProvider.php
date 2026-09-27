@@ -24,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
         if (Str::contains(request()->getHost(), 'ngrok-free.app')) {
         URL::forceScheme('https');
          }
+         
+        //  URL::forceRootUrl(config('app.url'));
     }
 }
