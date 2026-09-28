@@ -30,17 +30,29 @@ class ChildDashboard extends Component
     }
 
     private function loadStats()
-    {
-        $this->totalChildren = ChildProfile::count();
+    { 
+        $userId = auth()->id();
 
-        $this->activeTags = NfcTag::where('status', true)->count();
+        $this->totalChildren = ChildProfile::where('user_id','=',$userId)->count();
+
+       $this->activeTags = NfcTag::where('status', true)
+        ->whereHas('child', function ($query) use ($userId) {
+            $query->where('user_id', $userId); 
+        })
+        ->count();
 
         $this->lostChildren = ChildProfile::where(
             'lost_mode',
             true
-        )->count();
+        )
+        ->where('user_id','=',$userId)
+        ->count();
 
-        $this->totalScans = NfcScan::count();
+        $this->totalScans = NfcScan::whereHas('nfcTag.child.user', function($query) use ($userId){
+
+            $query->where('user_id','=',$userId);
+        })
+        ->count();
 
          $this->dispatch('init-lucide');
     }

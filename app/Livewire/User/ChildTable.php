@@ -77,7 +77,9 @@ class ChildTable extends Component
     public function render()
     {
 
-         $this->dispatch('init-lucide');
+        $this->dispatch('init-lucide');
+
+        $userId = auth()->id();
 
         $children = ChildProfile::query()
             ->with([
@@ -93,6 +95,7 @@ class ChildTable extends Component
             ->when($this->status === 'normal', function ($query) {
                 $query->where('lost_mode', false);
             })
+            ->where('user_id','=', $userId)
             ->latest()
             ->paginate(10);
 
