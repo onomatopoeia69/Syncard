@@ -50,7 +50,7 @@
                 <span>Wishlist</span>
             </a>
 
-            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg
+            <a href="{{ route('profile.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg
                           text-gray-600 hover:bg-gray-100 text-sm">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
@@ -73,9 +73,9 @@
              <i class="bi bi-person-arms-up"></i>
                 <span>Child Lost</span>
             </a>
- 
 
-             
+
+
             <form method="POST" action="/logout">
                 @csrf
 
