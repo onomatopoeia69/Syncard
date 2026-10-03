@@ -1,0 +1,17 @@
+_________________________________________________________________________________________________________________________
+| Column        | Type        | Purpose                                                | Example                        |
+| ------------- | ----------- | ------------------------------------------------------ | ------------------------------ |
+| `user_id`     | Foreign key | Identifies who owns the social account                 | `15`                           |
+| `platform`    | String      | Identifies the social platform                         | `github`                       |
+| `username`    | String      | Username/handle on that platform                       | `robert123`                    |
+| `url`         | String      | Direct URL to the profile                              | `https://github.com/robert123` |
+| `label`       | String      | Optional custom name displayed to users                | `My GitHub`                    |
+| `icon`        | String      | Icon associated with the platform                      | `fa-github`                    |
+| `is_visible`  | Boolean     | Controls whether the profile is publicly displayed     | `true`                         |
+| `is_verified` | Boolean     | Indicates whether your system has verified the account | `false`                        |
+| `sort_order`  | Integer     | Controls the display order                             | `1`                            |
+| `verified_at` | Timestamp   | Records when the account was verified                  | `2026-09-21 15:30:00`          |
+|_______________|_____________|________________________________________________________|________________________________|
+
+NIGGER
+

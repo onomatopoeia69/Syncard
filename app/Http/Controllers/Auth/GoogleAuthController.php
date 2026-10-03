@@ -46,10 +46,12 @@ class GoogleAuthController extends Controller
             
             Auth::login($existingUser);
 
-             return redirect('/dashboard')->with([
-                'welcome' => 'Welcome Back !,',
+            return redirect()->route('users.dashboard')->with([
+                'welcome' => 'Welcome!',
                 'time' => now()->diffForHumans()
             ]);
+
+            
 
         
         }else{ 
@@ -67,8 +69,8 @@ class GoogleAuthController extends Controller
             
             Auth::login($newUser);
 
-             return redirect('/dashboard')->with([
-                'welcome' => 'Welcome!,',
+            return redirect()->route('users.dashboard')->with([
+                'welcome' => 'Welcome!',
                 'time' => now()->diffForHumans()
             ]);
         }

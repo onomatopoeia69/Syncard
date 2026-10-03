@@ -1,10 +1,5 @@
- <footer>
+ <footer class="bg-yellow-300 text-black text-center py-2 ">
         <p>&copy; 
             {{ Carbon\Carbon::now()->format('Y') }}
-         Ordering and billing</p>
-        <p>Follow us on:
-            <a href="#">Facebook</a>,
-            <a href="#">Twitter</a>,
-            <a href="#">Instagram</a>
-        </p>
+            SyncCard Business Solution Corp.</p>
 </footer>    

@@ -43,7 +43,7 @@ class customNotifyEmail extends BaseVerifyEmail implements ShouldQueue
             ->greeting('Hello ' . $notifiable->name . ',')
             ->line('Thank you for registering! Please confirm your email to get started.')
             ->action('Verify Email', $verificationUrl)
-            ->line('If you did not create an account, no further action is required.');
+            ->line('If you did not create an account, no further action is required. This verification link expires in 10 minutes.');
     }
 
 
@@ -51,7 +51,7 @@ class customNotifyEmail extends BaseVerifyEmail implements ShouldQueue
     {
         return URL::temporarySignedRoute(
             'verification.verify', 
-            Carbon::now()->addMinutes(60), 
+            Carbon::now()->addMinutes(10), 
             ['id' => $notifiable->getKey(), 'hash' => sha1($notifiable->getEmailForVerification())]
         );
     }

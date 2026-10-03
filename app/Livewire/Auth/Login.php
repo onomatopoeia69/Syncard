@@ -47,9 +47,8 @@ class Login extends Component
 
         $user = Auth::user();
 
-
         session()->flash('welcome', 'Welcome back!');
-        session()->flash( 'time', now()->diffForHumans());
+        session()->flash('time', now()->diffForHumans());
         
 
         switch ($user->role) {
@@ -58,8 +57,8 @@ class Login extends Component
             case 'staff':
                 return redirect()->route('staff.dashboard');
             default:
-               session()->flash( 'emailVerified', Auth::user()->is_email_verified);
-                return redirect()->route('users.dashboard');
+               session()->flash('emailVerified', Auth::user()->is_email_verified);
+                return redirect()->intended()->route('users.dashboard');
             }
 
     }
@@ -71,7 +70,6 @@ class Login extends Component
             $this->cooldown = RateLimiter::availableIn($this->throttleKey());
             $this->dispatch('clearAfterError');
             $this->reset('email','password');
-            
         }
     }
 
@@ -122,6 +120,7 @@ class Login extends Component
     public function redirectToGoogle()
     {
         return redirect()->route('google.redirect');
+        
     }
 
     public function redirectToFacebook()

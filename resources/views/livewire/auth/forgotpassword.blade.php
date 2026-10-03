@@ -1,8 +1,8 @@
 {{-- modal for forgot password --}}
-
+@teleport('body')
  <div class="modal fade" id="forgotPasswordModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" wire:ignore.self>
   <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
+    <div class="modal-content bg-gray-100">
 
      {{-- Header --}}
       <div class="modal-header border-0">
@@ -26,15 +26,15 @@
             <span class="text-success">A user found.</span>
         @endif
 
-        <button type="submit" @error('forgotEmail') disabled   @else  @if (empty($forgotEmail)) disabled @endif @enderror class="btn btn-primary w-100">Reset Password</button>
+        <button type="submit" @error('forgotEmail') disabled   @else  @if (empty($forgotEmail)) disabled @endif @enderror class="btn btn-warning text-black fw-semibold w-100">Reset Password</button>
      </form>
 
     
      {{-- second modal trigger back to login --}}
       <div class="text-center mt-4">
-            <small class="text-muted">
+            <small class="text-black fw-semibold">
               Remembered your password?
-              <a href="#" class="text-decoration-none" wire:click="clearFields" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login Now</a>
+              <a href="#" class="text-decoration-underline fw-semibold text-primary" wire:click="clearFields" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Login Now</a>
             </small>
       </div>
     </div>
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+@endteleport

@@ -5,9 +5,12 @@ namespace App\Models;
 use App\Notifications\customNotifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Profile;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -49,24 +52,24 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    
+
     public function getFirstNameAttribute()
-    {      
-       return explode(' ', $this->name)[0];    
+    {
+        return explode(' ', $this->name)[0];
     }
 
     public function getLastNameAttribute()
-    {   
+    {
         $arr = explode(' ', $this->name);
 
-        if(count($arr) >= 4){
+        if (count($arr) >= 4) {
 
-        return implode(' ', array_slice(explode(' ', $this->name), -2));
+            return implode(' ', array_slice(explode(' ', $this->name), -2));
 
-        }else{
+        } else {
 
-        return array_slice(explode(' ', $this->name), -1)[0] ?? '';
-        
+            return array_slice(explode(' ', $this->name), -1)[0] ?? '';
+
         }
 
     }
@@ -105,4 +108,17 @@ class User extends Authenticatable implements MustVerifyEmail
 
     }
 
+    public function profile(): HasOne
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function socials(): HasMany
+    {
+        return $this->hasMany(Social::class);
+    }
+    public function childProfiles(): HasMany
+    {
+        return $this->hasMany(ChildProfile::class, 'user_id');
+    }
 }

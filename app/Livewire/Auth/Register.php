@@ -48,9 +48,11 @@ class Register extends Component
 
         session()->flash('welcome', 'Welcome! ');
         session()->flash( 'time', now()->diffForHumans());
+        session()->flash( 'emailVerified', Auth::user()->is_email_verified);
     
         return redirect()->route('users.dashboard');
 
+            
         }catch(\Exception $e){
 
 
