@@ -26,9 +26,9 @@ jobs:
       - name: Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ ftpupload.net }}
-          username: ${{ if0_43074509 }}
-          password: ${{ tZBNoEy2uGHdpo }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
           server-dir: /htdocs/
