@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule ^storage/(.*)$ /storage/app/public/$1 [END]
+RewriteRule (.*) /public/$1 [L]
