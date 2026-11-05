@@ -36,14 +36,14 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./
-          server-dir: /htdocs/
+          server-dir: htdocs/
           dry-run: false
           dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
-            **/node_modules/**
             **/.github/**
+            **/node_modules/**
             **/.env
             **/.env.*
             **/tests/**
