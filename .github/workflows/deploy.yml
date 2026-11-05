@@ -1,9 +1,11 @@
-name: Deploy Laravel to InfinityFree
+
+name: Deploy PHP Project to InfinityFree
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -33,11 +35,15 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
+          local-dir: ./
           server-dir: /htdocs/
+          dry-run: false
+          dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
-            .env
-            .env.*
-            tests/**
+            **/.github/**
+            **/.env
+            **/.env.*
+            **/tests/**
