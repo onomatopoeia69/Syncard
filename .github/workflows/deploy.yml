@@ -1,7 +1,10 @@
 
-name: Test InfinityFree FTP
+name: Deploy PHP Project to InfinityFree
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -9,10 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Test FTP Upload
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, ctype, fileinfo, pdo, pdo_mysql, curl
+          coverage: none
+
+      - name: Install Composer dependencies
+        env:
+          APP_URL: http://localhost
+        run: composer install --no-dev --prefer-dist --optimize-autoloader
+
+          - name: Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -24,5 +39,10 @@ jobs:
           server-dir: htdocs/
           dangerous-clean-slate: false
           exclude: |
-            **
-            !ftp-test.txt
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/.env
+            **/.env.*
+            **/tests/**
