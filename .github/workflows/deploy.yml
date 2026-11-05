@@ -27,7 +27,7 @@ jobs:
           APP_URL: http://localhost
         run: composer install --no-dev --prefer-dist --optimize-autoloader
 
-          - name: Deploy to InfinityFree
+      - name: Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.FTP_SERVER }}
