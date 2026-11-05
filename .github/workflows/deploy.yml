@@ -34,7 +34,6 @@ jobs:
           protocol: ftp
           port: 21
           server-dir: /htdocs/
-          dry-run: true
           exclude: |
             **/.git*
             **/.git*/**
