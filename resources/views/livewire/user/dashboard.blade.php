@@ -10,7 +10,7 @@
             </h1>
 
             <p class="mt-1 text-sm text-slate-500">
-                Welcome back, Carl. Here's what's happening with your portfolio.
+                Welcome {{Auth::user()->first_name}}. Here's what's happening with your portfolio.
             </p>
         </div>
 
@@ -260,7 +260,7 @@
                         <div class="flex flex-wrap items-center gap-2">
 
                             <h3 class="text-lg font-semibold text-slate-900">
-                                Carl James Langres
+                                {{Auth::user()->name}}
                             </h3>
 
                             <span class="inline-flex items-center gap-1
@@ -292,7 +292,7 @@
                             </i>
 
                             <span class="text-sm text-slate-600">
-                                pandora.com/carl
+                                syncard.com
                             </span>
 
                             <button
@@ -419,7 +419,7 @@
                                     px-3 py-2.5">
 
                             <p class="text-xs text-slate-600 truncate">
-                                pandora.com/carl
+                                syncard.com
                             </p>
 
                         </div>
